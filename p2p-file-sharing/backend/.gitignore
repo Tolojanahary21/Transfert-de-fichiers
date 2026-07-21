@@ -1,0 +1,12 @@
+# Environment
+.env
+
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+.venv/
+
+# Alembic config (contains DB credentials)
+alembic.ini
