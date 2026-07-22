@@ -3,9 +3,10 @@ from fastapi import FastAPI
 from app.routes import devices 
 from app.routes import files
 from app.routes import transfers
+#pour peers
+from app.routes import peers
 #import pour le CORS
-from fastapi.middleware.cors import CORSMiddleware 
-
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(
     title= "P2P Transfert de Fichiers",
@@ -17,7 +18,8 @@ app = FastAPI(
 app.include_router(devices.router)
 app.include_router(files.router)
 app.include_router(transfers.router)
-
+#peers
+app.include_router(peers.router)
 #Config CORS
 app.add_middleware(
     CORSMiddleware,
@@ -33,3 +35,4 @@ app.add_middleware(
 @app.get("/")
 def root():
     return {"message": "Tongasoa FastAPI"}
+
