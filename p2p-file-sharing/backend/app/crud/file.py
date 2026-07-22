@@ -12,6 +12,7 @@ def create_file(db: Session, file: FileCreate):
     db.refresh(new_file)
 
     return new_file
+#pour l'upload
 
 
 def get_files(db: Session):
@@ -49,3 +50,9 @@ def delete_file(db: Session, file_id: int):
     db.commit()
 
     return db_file
+#pour la recherche 
+def search_files(db: Session, keyword: str):
+
+    return db.query(File).filter(
+        File.file_name.ilike(f"%{keyword}%")
+    ).all()

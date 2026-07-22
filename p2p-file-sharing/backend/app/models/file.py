@@ -9,7 +9,7 @@ class File(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     device_id = Column(Integer, ForeignKey("devices.id"), nullable=False)
-    file_name = Column(String, nullable=False)
+    file_name = Column(String, nullable=False,index= True)
     file_size = Column(Integer, nullable=False)
     file_type = Column(String, nullable=False)
     file_extension = Column(String, nullable=False)
